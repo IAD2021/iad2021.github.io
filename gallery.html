@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Explore the media gallery of Initiative for Awareness and Development (IAD). See our impact through photos and videos.">
+    <meta name="author" content="IAD">
+    <title>IAD - Gallery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/bootstrap-icons.css" rel="stylesheet">
+    <link href="./css/templatemo-ebook-landing.css" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/3c4e8cd21a.js' crossorigin='anonymous'></script>
+    <style>
+        :root {
+            --primary: #2c974b;
+            --primary-light: #e8f5e9;
+            --dark: #1a1a1a;
+            --light: #ffffff;
+            --gray: #6c757d;
+            --light-gray: #f8f9fa;
+            --border-radius: 12px;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            font-family: 'Unbounded', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .section-title h2 {
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary-light) 0%, #f0f2f5 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(44, 151, 75, 0.1);
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(44, 151, 75, 0.1);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+
+        .gallery-section {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .gallery-filter-btn {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .gallery-filter-btn:hover, .gallery-filter-btn.active {
+            background-color: var(--primary);
+            color: var(--light);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            height: 300px;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 60%);
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-caption {
+            color: var(--light);
+            font-weight: 600;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        .video-section {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 25px;
+            text-align: center;
+        }
+
+        .social-section {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+
+        .social-feed {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .social-card {
+            background-color: var(--light);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 20px;
+            transition: var(--transition);
+        }
+
+        .social-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .social-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 60px 0;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-item {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="./images/iad.png" class="navbar-brand-icon" width="50%" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-lg-auto me-lg-4">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="advisory.html">Advisory Members</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="team.html">Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="gallery.html">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="donation.html">Donate</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <section class="hero">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-12">
+                        <div class="hero-content">
+                            <h1>Media Gallery</h1>
+                            <p>Our Media Gallery showcases the vibrant and transformative work we are doing in the community. Through photos, videos, and social media integration, we offer a deeper look at our impact and how we are driving change in real-time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Photo <span class="text-primary">Gallery</span></h2>
+                    <p class="lead">Explore visual snapshots of our initiatives, from community events to environmental campaigns. Each image tells a story of progress, engagement, and the powerful impact we are making together.</p>
+                </div>
+                
+                <div class="gallery-filters">
+                    <button class="gallery-filter-btn active" data-filter="all">All</button>
+                    <button class="gallery-filter-btn" data-filter="community">Community Events</button>
+                    <button class="gallery-filter-btn" data-filter="environment">Environmental Campaigns</button>
+                    <button class="gallery-filter-btn" data-filter="youth">Youth Programs</button>
+                    <button class="gallery-filter-btn" data-filter="women">Women Empowerment</button>
+                </div>
+                
+                <div class="gallery-grid">
+                    <!-- Community Events -->
+                    <div class="gallery-item" data-category="community">
+                        <img src="./images/bootcamp.jpeg" alt="Community Workshop">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">Community Workshop</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="community">
+                        <img src="./images/community-meeting.jpeg" alt="Community Meeting">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">Community Meeting</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Environmental Campaigns -->
+                    <div class="gallery-item" data-category="environment">
+                        <img src="./images/tomatoes.jpeg" alt="Crop Planting">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">Crop Planting Initiative</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="environment">
+                        <img src="./images/campaign.jpeg" alt="Cleanup Campaign">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">Community Campaigns</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Youth Programs -->
+                    <div class="gallery-item" data-category="youth">
+                        <img src="./images/economic-training.jpeg" alt="Youth Training">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">Youth Skills Training</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="youth">
+                        <img src="./images/youth-workshop.jpeg" alt="Youth Workshop">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">Youth Workshop</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Women Empowerment -->
+                    <div class="gallery-item" data-category="women">
+                        <img src="./images/training1.jpeg" alt="Women's Workshop">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">Women's Workshop</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="women">
+                        <img src="./images/youth2.jpeg" alt="Women's Group">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">Women's Meeting</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional Images -->
+                    <div class="gallery-item" data-category="community">
+                        <img src="./images/youth1.jpeg" alt="Team Collaboration">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">Team Collaboration Session</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="youth">
+                        <img src="./images/youth3.jpeg" alt="Youth Discussion">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">Youth Group Discussion</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="environment">
+                        <img src="./images/crop.jpeg" alt="Agriculture Training">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">Sustainable Agriculture Training</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="women">
+                        <img src="./images/business1.jpeg" alt="Women's Business">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">Business Initiative</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="social-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Social Media <span class="text-primary">Highlights</span></h2>
+                    <p class="lead">Follow us on social media to stay updated with our latest initiatives and impact stories.</p>
+                </div>
+                
+                <div class="social-feed">
+                    <div class="social-card">
+                        <div class="social-icon">
+                            <i class="bi bi-instagram"></i>
+                        </div>
+                        <h4>Instagram</h4>
+                        <p>Follow us on Instagram for daily updates, stories, and visual highlights of our work.</p>
+                        <a href="https://www.instagram.com/iadorg360?utm_source=qr&igsh=b21laXc0NWlxbXFq" class="btn custom-btn">Follow Us</a>
+                    </div>
+                    <div class="social-card">
+                        <div class="social-icon">
+                            <i class="bi bi-facebook"></i>
+                        </div>
+                        <h4>Facebook</h4>
+                        <p>Like our Facebook page for event announcements, news, and community engagement.</p>
+                        <a href="https://www.facebook.com/profile.php?id=100091511272227&mibextid=rS40aB7S9Ucbxw6v" class="btn custom-btn">Like Our Page</a>
+                    </div>
+                    <div class="social-card">
+                        <div class="social-icon">
+                            <i class="bi bi-twitter"></i>
+                        </div>
+                        <h4>X</h4>
+                        <p>Follow us on X for real-time updates, conversations, and impact stories.</p>
+                        <a href="https://x.com/IADorganization?t=055JCpiLhuYHnmRvdalzhQ&s=08" class="btn custom-btn">Follow Us</a>
+                    </div>
+                     <div class="social-card">
+                        <div class="social-icon">
+                            <i class="bi bi-tiktok"></i>
+                        </div>
+                        <h4>Tiktok</h4>
+                        <p>Follow us on Tiktok for amazing transformational videos.</p>
+                        <a href="https://www.tiktok.com/@iadorg?_t=ZM-8zT4LjpWrN2&_r=1" class="btn custom-btn">Follow Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="contact-section section-padding" id="section_5">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-5 col-12 mx-auto">
+                    <form class="custom-form ebook-download-form bg-white shadow" action="#" method="post" role="form">
+                        <div class="text-center mb-5">
+                            <h2 class="mb-1">Subscribe to our newsletter</h2>
+                        </div>
+                        <div class="ebook-download-form-body">
+                            <div class="input-group mb-4">
+                                <input type="text" name="ebook-form-name" id="ebook-form-name" class="form-control"
+                                    aria-label="ebook-form-name" aria-describedby="basic-addon1" placeholder="Your Name"
+                                    required>
+                                <span class="input-group-text" id="basic-addon1">
+                                    <i class="custom-form-icon bi-person"></i>
+                                </span>
+                            </div>
+                            <div class="input-group mb-4">
+                                <input type="email" name="ebook-email" id="ebook-email" pattern="[^ @]*@[^ @]*"
+                                    class="form-control" placeholder="your@email.com" aria-label="ebook-form-email"
+                                    aria-describedby="basic-addon2" required="">
+                                <span class="input-group-text" id="basic-addon2">
+                                    <i class="custom-form-icon bi-envelope"></i>
+                                </span>
+                            </div>
+                            <div class="col-lg-8 col-md-10 col-8 mx-auto">
+                                <button type="submit" class="form-control">Subscribe</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <h2 class="mb-4">Contact</h2>
+                    <p class="mb-3">
+                        <i class="bi-geo-alt me-2"></i> Homabay, Kenya
+                    </p>
+                    <p class="mb-2">
+                        <a href="tel: 0795760185" class="contact-link">
+                            +254 795 760185
+                        </a>
+                    </p>
+                    <p>
+                        <a href="mailto:info@iadorganization.org" class="contact-link">
+                            info@iadorganization.org
+                        </a>
+                    </p>
+                    <h6 class="site-footer-title mt-5 mb-3">Social</h6>
+                    <ul class="social-icon mb-4">
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-instagram"></a>
+                        </li>
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-twitter"></a>
+                        </li>
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-facebook"></a>
+                        </li>
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-whatsapp"></a>
+                        </li>
+                    </ul>
+                    <p class="copyright-text">
+                        Copyright © IAD
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/jquery.sticky.js"></script>
+    <script src="./js/click-scroll.js"></script>
+    <script src="./js/custom.js"></script>
+    
+    <script>
+        // Simple filter functionality for gallery
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.gallery-filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Show or hide gallery items based on filter
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

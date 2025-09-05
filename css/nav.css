@@ -1,0 +1,60 @@
+        .navbar {
+            background-color: var(--light);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            padding: 0.8rem 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1030;
+        }
+
+        .navbar-brand {
+            padding: 0;
+        }
+
+        .navbar-brand img {
+            height: 50px;
+            width: auto;
+        }
+
+        .navbar-toggler {
+            border: none;
+            padding: 0.5rem;
+            font-size: 1.25rem;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        .navbar-nav {
+            align-items: center;
+        }
+
+        .nav-item {
+            margin: 0 0.3rem;
+        }
+
+        .nav-link {
+            color: var(--dark);
+            font-weight: 500;
+            padding: 0.6rem 1rem !important;
+            border-radius: 50px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-link:hover, .nav-link:focus {
+            color: var(--primary);
+            background-color: var(--primary-light);
+        }
+
+        .nav-link.active {
+            color: var(--light);
+            background-color: var(--primary);
+        }
+
+        .nav-link.active:hover {
+            background-color: var(--dark);
+        }

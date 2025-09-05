@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Contact Initiative for Awareness and Development (IAD). Get in touch with us for inquiries, partnerships, or support.">
+    <meta name="author" content="IAD">
+    <title>IAD - Contact Us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/bootstrap-icons.css" rel="stylesheet">
+    <link href="./css/templatemo-ebook-landing.css" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/3c4e8cd21a.js' crossorigin='anonymous'></script>
+    <style>
+        :root {
+            --primary: #2c974b;
+            --primary-light: #e8f5e9;
+            --dark: #1a1a1a;
+            --light: #ffffff;
+            --gray: #6c757d;
+            --light-gray: #f8f9fa;
+            --border-radius: 12px;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            font-family: 'Unbounded', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .section-title h2 {
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+
+        .hero {
+            min-height: 40vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary-light) 0%, #f0f2f5 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(44, 151, 75, 0.1);
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(44, 151, 75, 0.1);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            width: 100%;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-section {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+
+        .contact-info-card {
+            background-color: var(--light);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 40px;
+            margin-bottom: 30px;
+            transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .contact-info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .contact-info-card h3 {
+            color: var(--dark);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .contact-detail-icon {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-right: 15px;
+            width: 30px;
+            text-align: center;
+        }
+
+        .contact-link {
+            color: var(--dark);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-link:hover {
+            color: var(--primary);
+        }
+
+        .social-media-section {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+
+        .social-card {
+            background-color: var(--light);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .social-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .social-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .social-card h3 {
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .social-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .contact-form-section {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+
+        .contact-form {
+            background-color: var(--light);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+            color: var(--dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(44, 151, 75, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--light);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .map-section {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+
+        .map-container {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            height: 400px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 60px 0;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-info-card, .social-card, .contact-form {
+                padding: 25px;
+            }
+            
+            .map-container {
+                height: 300px;
+            }
+            
+            .contact-detail {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .contact-detail-icon {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="./images/iad.png" class="navbar-brand-icon" width="50%" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-lg-auto me-lg-4">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="team.html">Team & Advisory</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gallery.html">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="donation.html">Donate</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Contact Us</h1>
+                    <p>We would love to hear from you! Whether you have questions, feedback, or need more information, we are here to assist.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Contact <span class="text-primary">Information</span></h2>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <div class="contact-info-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h3>Phone</h3>
+                            <div class="contact-detail">
+                                <div class="contact-detail-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <a href="tel:+254795760185" class="contact-link">+254 795 760185</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <div class="contact-info-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h3>Email</h3>
+                            <div class="contact-detail">
+                                <div class="contact-detail-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <a href="mailto:info@iadorganization.org" class="contact-link">info@iadorganization.org</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <div class="contact-info-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h3>Address</h3>
+                            <div class="contact-detail">
+                                <div class="contact-detail-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    Bank Road, Sonyanko Paza, 1st floor, Westwing door 3<br>
+                                    Homa Bay County, Kenya
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="social-media-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Follow Us On <span class="text-primary">Social Media</span></h2>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-12 mb-4">
+                        <div class="social-card">
+                            <div class="social-icon">
+                                <i class="bi bi-facebook"></i>
+                            </div>
+                            <h3>Facebook</h3>
+                            <p>Follow us on Facebook for updates, events, and community engagement.</p>
+                            <a href="#" class="btn btn-primary">Follow Us</a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-6 col-12 mb-4">
+                        <div class="social-card">
+                            <div class="social-icon">
+                                <i class="bi bi-twitter"></i>
+                            </div>
+                            <h3>Twitter</h3>
+                            <p>Join the conversation on Twitter and stay updated with our latest news.</p>
+                            <a href="#" class="btn btn-primary">Follow Us</a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-6 col-12 mb-4">
+                        <div class="social-card">
+                            <div class="social-icon">
+                                <i class="bi bi-instagram"></i>
+                            </div>
+                            <h3>Instagram</h3>
+                            <p>See our work in action through photos and stories on Instagram.</p>
+                            <a href="#" class="btn btn-primary">Follow Us</a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-6 col-12 mb-4">
+                        <div class="social-card">
+                            <div class="social-icon">
+                                <i class="bi bi-tiktok"></i>
+                            </div>
+                            <h3>TikTok</h3>
+                            <p>Watch our short videos and behind-the-scenes content on TikTok.</p>
+                            <a href="#" class="btn btn-primary">Follow Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-form-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Send Us a <span class="text-primary">Message</span></h2>
+                    <p class="lead">Have an inquiry or need more details? Fill out the form below, and our team will get back to you promptly.</p>
+                </div>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-12">
+                        <div class="contact-form">
+                            <form action="#" method="post">
+                                <div class="form-group">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" id="email" name="email" class="form-control" placeholder="Your Email Address" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea id="message" name="message" class="form-control" placeholder="Your Message" required></textarea>
+                                </div>
+                                
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary">Send Message</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="map-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our <span class="text-primary">Location</span></h2>
+                </div>
+                
+                <div class="map-container">
+                    <!-- Google Maps embed code would go here -->
+                    <div style="width:100%;height:100%;background-color:#e8f5e9;display:flex;align-items:center;justify-content:center;color:#2c974b;">
+                        <div class="text-center">
+                            <i class="fas fa-map-marker-alt" style="font-size:3rem;margin-bottom:15px;"></i>
+                            <p>Homa Bay County, Kenya<br>Bank Road, Sonyanko Paza</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="contact-section section-padding" id="section_5">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-5 col-12 mx-auto">
+                    <form class="custom-form ebook-download-form bg-white shadow" action="#" method="post" role="form">
+                        <div class="text-center mb-5">
+                            <h2 class="mb-1">Subscribe to our newsletter</h2>
+                        </div>
+                        <div class="ebook-download-form-body">
+                            <div class="input-group mb-4">
+                                <input type="text" name="ebook-form-name" id="ebook-form-name" class="form-control"
+                                    aria-label="ebook-form-name" aria-describedby="basic-addon1" placeholder="Your Name"
+                                    required>
+                                <span class="input-group-text" id="basic-addon1">
+                                    <i class="custom-form-icon bi-person"></i>
+                                </span>
+                            </div>
+                            <div class="input-group mb-4">
+                                <input type="email" name="ebook-email" id="ebook-email" pattern="[^ @]*@[^ @]*"
+                                    class="form-control" placeholder="your@email.com" aria-label="ebook-form-email"
+                                    aria-describedby="basic-addon2" required="">
+                                <span class="input-group-text" id="basic-addon2">
+                                    <i class="custom-form-icon bi-envelope"></i>
+                                </span>
+                            </div>
+                            <div class="col-lg-8 col-md-10 col-8 mx-auto">
+                                <button type="submit" class="form-control">Subscribe</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <h2 class="mb-4">Contact</h2>
+                    <p class="mb-3">
+                        <i class="bi-geo-alt me-2"></i> Homabay, Kenya
+                    </p>
+                    <p class="mb-2">
+                        <a href="tel: 0795760185" class="contact-link">
+                            +254 795 760185
+                        </a>
+                    </p>
+                    <p>
+                        <a href="mailto:info@iadorganization.org" class="contact-link">
+                            info@iadorganization.org
+                        </a>
+                    </p>
+                    <h6 class="site-footer-title mt-5 mb-3">Social</h6>
+                    <ul class="social-icon mb-4">
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-instagram"></a>
+                        </li>
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-twitter"></a>
+                        </li>
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-facebook"></a>
+                        </li>
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-whatsapp"></a>
+                        </li>
+                    </ul>
+                    <p class="copyright-text">
+                        Copyright © IAD
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/jquery.sticky.js"></script>
+    <script src="./js/click-scroll.js"></script>
+    <script src="./js/custom.js"></script>
+</body>
+
+</html>

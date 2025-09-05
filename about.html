@@ -16,72 +16,157 @@
     <link href="./css/templatemo-ebook-landing.css" rel="stylesheet">
     <script src='https://kit.fontawesome.com/3c4e8cd21a.js' crossorigin='anonymous'></script>
     <style>
+        :root {
+            --primary: #2c974b;
+            --primary-light: #e8f5e9;
+            --dark: #1a1a1a;
+            --light: #ffffff;
+            --gray: #6c757d;
+            --light-gray: #f8f9fa;
+            --border-radius: 12px;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
         body {
             background-color: #f0f2f5;
+            font-family: 'Unbounded', sans-serif;
+            color: #333;
+            line-height: 1.6;
         }
 
         .section-padding {
-            padding: 80px 0;
+            padding: 100px 0;
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .section-title h2 {
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
         }
 
         .content-block {
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            background-color: var(--light);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
             padding: 40px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .content-block:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
         }
 
         .add_green {
-            color: #2c974b;
+            color: var(--primary);
             font-weight: 700;
         }
 
         .sub-heading {
             font-size: 1.5rem;
-            color: #555;
+            color: var(--gray);
             margin-top: 20px;
             margin-bottom: 30px;
+            font-weight: 300;
         }
 
         .image-container {
-            border-radius: 12px;
+            border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .image-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(44, 151, 75, 0.1), transparent);
+            z-index: 1;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .image-container:hover::before {
+            opacity: 1;
         }
 
         .image-container img {
             width: 100%;
             height: auto;
             display: block;
+            transition: var(--transition);
+        }
+
+        .image-container:hover img {
+            transform: scale(1.03);
         }
 
         .story-timeline {
             border-left: 3px solid #e0e0e0;
-            padding-left: 20px;
+            padding-left: 30px;
+            position: relative;
         }
 
         .timeline-item {
             position: relative;
-            padding-bottom: 20px;
+            padding-bottom: 30px;
         }
 
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -29px;
-            top: 5px;
-            height: 14px;
-            width: 14px;
-            background-color: #2c974b;
+            left: -36px;
+            top: 8px;
+            height: 20px;
+            width: 20px;
+            background-color: var(--primary);
             border-radius: 50%;
+            border: 4px solid var(--light);
+            box-shadow: 0 0 0 3px var(--primary);
+            z-index: 2;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-item strong {
+            display: block;
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
         }
 
         .project-card {
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            background-color: var(--light);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
             margin-bottom: 30px;
             overflow: hidden;
             height: 100%;
@@ -91,20 +176,149 @@
 
         .project-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         }
 
         .project-card img {
             width: 100%;
             height: 250px;
             object-fit: cover;
-            border-top-left-radius: 12px;
-            border-top-right-radius: 12px;
+            transition: var(--transition);
+        }
+
+        .project-card:hover img {
+            transform: scale(1.05);
         }
 
         .project-card-body {
             padding: 25px;
             flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card-body h4 {
+            color: var(--dark);
+            margin-bottom: 15px;
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-card-body h4 {
+            color: var(--primary);
+        }
+
+        .value-card {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            border-left: 4px solid var(--primary);
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .value-card h5 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-light) 0%, #f0f2f5 100%);
+            padding: 120px 0 120px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(44, 151, 75, 0.1);
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(44, 151, 75, 0.1);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stats-container {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--box-shadow);
+            margin-top: -80px;
+            position: relative;
+            z-index: 10;
+        }
+
+        @media (max-width: 992px) {
+            .section-padding {
+                padding: 80px 0;
+            }
+
+            .hero {
+                padding: 100px 0 60px;
+            }
+
+            .stats-container {
+                margin-top: 0;
+                margin-bottom: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 60px 0;
+            }
+
+            .content-block {
+                padding: 25px;
+            }
+
+            .hero {
+                padding: 80px 0 40px;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
@@ -126,97 +340,119 @@
                             <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html">About Us</a>
+                            <a class="nav-link active" href="about.html">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="advisory.html">Advisory Members</a>
+                            <a class="nav-link" href="team.html">Team & Advisory</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="team.html">Team</a>
+                            <a class="nav-link" href="gallery.html">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="donation.html">Donate</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <section class="book-section section-padding" id="section_2">
+        <section class="hero">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-12 order-lg-1 order-2">
-                        <div class="book-section-info">
-                            <h2 class="mb-4">About us</h2>
-                            <p>
+                        <div class="hero-content">
+                            <h1 class="mb-4">About <span class="add_green">IAD</span></h1>
+                            <p class="lead">
                                 Welcome to Initiative for Awareness and Development (IAD), empowering Kenya since 2021.
-                                <br>
                                 We pioneer innovative solutions for underserved communities.
-                                <br>
                                 Our commitment is to bridge awareness gaps and extend development to the last mile.
                             </p>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-12 order-lg-2 order-1">
+                    <div class="col-lg-6 col-12 order-lg-2 order-1 mb-4 mb-lg-0">
                         <div class="image-container">
-                            <img src="/images/image2.jpeg" class="img-fluid" alt="">
+                            <img src="/images/image2.jpeg" class="img-fluid" alt="IAD Organization">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <div class="container">
+            <div class="stats-container">
+                <div class="row text-center">
+                    <div class="col-md-3 col-6 mb-4 mb-md-0">
+                        <div class="stat-number">4+</div>
+                        <div class="stat-label">Years of Service</div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4 mb-md-0">
+                        <div class="stat-number">20000+</div>
+                        <div class="stat-label">Lives Impacted</div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Projects</div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">Core Values</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <section class="section-padding" id="who-we-are">
             <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10 col-12 text-center">
-                        <h2 class="add_green mb-4">Our Story:</h2>
-                        <h5 class="sub-heading">
-                            We envision a society where young and women are empowered to realize their full potential
-                        </h5>
-                    </div>
+                <div class="section-title">
+                    <h2>Our <span class="add_green">Story</span></h2>
+                    <p class="sub-heading">
+                        We envision a society where young people and women are empowered to realize their full potential
+                    </p>
                 </div>
                 <div class="row">
                     <div class="col-lg-6 col-12 mb-4 mb-lg-0">
-                        <div class="content-block h-100">
-                            <p>The Initiative for Awareness and Development (IAD) Development (IAD) is a development-
-                                and social
-                                impact-driven organization that works with, young
-                                people, women, supporters, and partners to create
-                                just, inclusive communities ensuring equity and
-                                opportunity reach every corner, all the way to the last
-                                mile. </p>
-                            <p>To do this, we tackle the root causes of inequality and
-                                exclusion, working with young people, and women to
-                                amplify their voices, expand opportunities, and create
-                                lasting solutions. Our approach strengthens
-                                participation in decision-making, drives sustainable
-                                livelihoods, and nurtures wellbeing—ensuring equity
+                        <div class="content-block">
+                            <p>The Initiative for Awareness and Development (IAD) is a development- and social
+                                impact-driven organization that works with young people, women, supporters, and partners
+                                to create
+                                just, inclusive communities ensuring equity and opportunity reach every corner, all the
+                                way to the last
+                                mile.</p>
+                            <p>To do this, we tackle the root causes of inequality and exclusion, working with young
+                                people, and women to
+                                amplify their voices, expand opportunities, and create lasting solutions. Our approach
+                                strengthens
+                                participation in decision-making, drives sustainable livelihoods, and nurtures
+                                wellbeing—ensuring equity
                                 and justice reach even the most remote communities.</p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-12">
-                        <div class="content-block h-100">
-                            <h4 class="mb-3">Where it started:</h4>
+                        <div class="content-block">
+                            <h4 class="mb-4">Where it started:</h4>
                             <div class="story-timeline">
                                 <div class="timeline-item">
                                     <strong>2020</strong>
-                                    <p class="text-muted">As the world stood still during the COVID-19 lockdown, a small
-                                        circle of young visionaries met in the heart of Shauriyako, Homa Bay County
-                                        Kenya . What began as an informal hangout in an informal settlement quickly
-                                        evolved into a powerful idea: meaningful development begins with critical
-                                        awareness.
+                                    <p>As the world stood still during the COVID-19 lockdown, a small circle of young
+                                        visionaries met in the heart of Shauriyako, Homa Bay County Kenya. What began as
+                                        an informal hangout in an informal settlement quickly evolved into a powerful
+                                        idea: meaningful development begins with critical awareness.
                                         We saw a gap projects often arrived before people were truly prepared to own
                                         them. We believed the first investment must be in mindset: building informed,
                                         inspired communities ready to shape their own futures. Out of that conviction,
                                         Initiative for Awareness and Development (IAD) was born merging awareness and
-                                        action, and driving change that lasts
-                                    </p>
+                                        action, and driving change that lasts.</p>
                                 </div>
                                 <div class="timeline-item">
                                     <strong>2021</strong>
-                                    <p class="mb-0">Registered CBO</p>
+                                    <p>Registered CBO</p>
                                 </div>
                                 <div class="timeline-item">
                                     <strong>2024</strong>
-                                    <p class="mb-0">Aligning with Like Minds</p>
+                                    <p>Aligning with Like Minds</p>
                                 </div>
                             </div>
                         </div>
@@ -225,95 +461,78 @@
             </div>
         </section>
 
-        <section class="section-padding" id="our-strategy">
+        <section class="section-padding bg-light" id="our-strategy">
             <div class="container">
+                <div class="section-title">
+                    <h2>Our <span class="add_green">Strategy</span> & <span class="add_green">Values</span></h2>
+                </div>
                 <div class="row">
-                    <div class="col-lg-6 col-12 mb-4 mb-lg-0">
-                        <h2 class="add_green">Our strategy:</h2>
-                        <div class="content-block h-100">
+                    <div class="col-lg-6 col-12 mb-5 mb-lg-0">
+                        <div class="content-block">
+                            <h3 class="add_green mb-4">Our Strategy</h3>
                             <p>
-                                At IAD, we work alongside
-                                young people, women,
-                                partners, and supporters to
-                                build communities that are
-                                just, inclusive, and resilient.
-                                We tackle inequality at its
-                                roots by amplifying voices in
-                                decision-making spaces,
-                                opening pathways to
-                                sustainable livelihoods,
-                                advancing health and
-                                education outcomes, and
-                                safeguarding the environment.
-                                Our approach is anchored
-                                on three pillars: Critical
-                                Awareness, Grassroots
-                                Solutions, and Strategic
-                                Partnerships.
+                                At IAD, we work alongside young people, women, partners, and supporters to build
+                                communities that are just, inclusive, and resilient.
+                                We tackle inequality at its roots by amplifying voices in decision-making spaces,
+                                opening pathways to sustainable livelihoods, advancing health and education outcomes,
+                                and safeguarding the environment.
+                                Our approach is anchored on three pillars: Critical Awareness, Grassroots Solutions, and
+                                Strategic Partnerships.
                             </p>
-                            <h4 class="mt-4">Our Vision</h4>
-                            <p>A society where
-                                young people and
-                                women are
-                                empowered to
-                                realize their full
-                                potential.
-                            </p>
-                            <h4 class="mt-4">Our mission statements</h4>
-                            <p>To promote the
-                                welfare and
-                                involvement of
-                                young people and
-                                women in
-                                development through
-                                partnerships,
-                                capacity building and
-                                advocacy
-                            </p>
+
+                            <div class="mt-5">
+                                <h4 class="add_green">Our Vision</h4>
+                                <p>A society where young people and women are empowered to realize their full potential.
+                                </p>
+                            </div>
+
+                            <div class="mt-4">
+                                <h4 class="add_green">Our Mission</h4>
+                                <p>To promote the welfare and involvement of young people and women in development
+                                    through partnerships, capacity building and advocacy.</p>
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-12">
-                        <h2 class="add_green">Our core values:</h2>
-                        <div class="content-block h-100">
-                            <p>At IAD, we are guided by five core
-                                principles the heartbeat of our work and
-                                the compass for our actions. Together,
-                                they form the acronym HEART, inspiring
-                                everything we do to create lasting change.
-                                HEART:</p>
-                            <p>
-                                <b>H - Humanity--</b>
-                                <br>
-                                encompasses our capacity for compassion, kindness, and understanding towards others,
-                                acknowledging their emotions and experiences.
-                            </p>
-                            <p>
-                                <b>E – Equity--</b>
-                                <br>
-                                embodies our principles of fairness and justice, ensuring that every individual,
-                                irrespective of their background or circumstances, has equal access to opportunities
-                                and fair treatment.
-                            </p>
-                            <p>
-                                <b>A - Adaptability--</b>
-                                <br>
-                                Our art of embracing change, being flexible, and adjusting to diverse situations. It
-                                involves resilience, an open mind, and the willingness to evolve in the face of
-                                challenges, fostering growth and progress.
-                            </p>
-                            <p>
-                                <b>R - Remarkability--</b>
-                                <br>
-                                signifies our pursuit of excellence and distinction, going beyond expectations to
-                                make exceptional contributions.
-                            </p>
-                            <p>
-                                <b>T – Transparency--</b>
-                                <br>
-                                involves our nature of being open, honest, and clear in both communication and
-                                actions. It's about freely sharing information, being accountable for decisions, and
-                                maintaining honesty in behavior, fostering trust and integrity.
-                            </p>
+                        <div class="content-block">
+                            <h3 class="add_green mb-4">Our Core Values</h3>
+                            <p>At IAD, we are guided by five core principles the heartbeat of our work and the compass
+                                for our actions. Together, they form the acronym HEART, inspiring everything we do to
+                                create lasting change.</p>
+
+                            <div class="value-card">
+                                <h5>H - Humanity</h5>
+                                <p class="mb-0">Encompasses our capacity for compassion, kindness, and understanding
+                                    towards others, acknowledging their emotions and experiences.</p>
+                            </div>
+
+                            <div class="value-card">
+                                <h5>E – Equity</h5>
+                                <p class="mb-0">Embodies our principles of fairness and justice, ensuring that every
+                                    individual, irrespective of their background or circumstances, has equal access to
+                                    opportunities and fair treatment.</p>
+                            </div>
+
+                            <div class="value-card">
+                                <h5>A - Adaptability</h5>
+                                <p class="mb-0">Our art of embracing change, being flexible, and adjusting to diverse
+                                    situations. It involves resilience, an open mind, and the willingness to evolve in
+                                    the face of challenges, fostering growth and progress.</p>
+                            </div>
+
+                            <div class="value-card">
+                                <h5>R - Remarkability</h5>
+                                <p class="mb-0">Signifies our pursuit of excellence and distinction, going beyond
+                                    expectations to make exceptional contributions.</p>
+                            </div>
+
+                            <div class="value-card">
+                                <h5>T – Transparency</h5>
+                                <p class="mb-0">Involves our nature of being open, honest, and clear in both
+                                    communication and actions. It's about freely sharing information, being accountable
+                                    for decisions, and maintaining honesty in behavior, fostering trust and integrity.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -322,118 +541,137 @@
 
         <section class="section-padding" id="strategic-plan">
             <div class="container">
+                <div class="section-title">
+                    <h2>Our <span class="add_green">Strategic Plan</span></h2>
+                </div>
                 <div class="row justify-content-center">
-                    <div class="col-lg-10 col-12 text-center">
-                        <h2 class="add_green">
-                            Our strategic plan
-                        </h2>
-                        <div class="content-block">
-                            <p>
-                                In our 2021-2025 Strategic Plan, we have identified three core strategic priority
-                                areas that will guide our efforts:
+                    <div class="col-lg-10 col-12">
+                        <div class="content-block text-center">
+                            <p class="lead">
+                                In our 2021-2025 Strategic Plan, we have identified three core strategic priority areas
+                                that will guide our efforts:
                             </p>
-                            <h4>Good Governance, Democracy & Human Rights: </h4>
-                            <p>
-                                <b>
-                                    Amplifying the Voices of Youth and Women: Empowerment in Action
-                                </b>
-                                <br>
-                                At IAD! we steadfastly champion the tenets of good governance, and democracy
-                                recognizing them as the cornerstone of an equitable and inclusive society. Our
-                                unwavering dedication is centered on the empowerment of youth and women, fostering
-                                their active engagement in decision-making processes.
-                            </p>
-                            <p>
-                                We ardently advocate for amplifying the voices of young people and women, seamlessly
-                                integrating them into the tapestry of local, national, and global policymaking. Our
-                                tireless efforts extend to advocating for the implementation of crucial policies and
-                                frameworks that foster the development of youth and women.
-                            </p>
-                            <p>
-                                By equipping today's youth and women with the necessary tools and platforms to shape
-                                tomorrow's world, we are committed to paving the way for a more just and progressive
-                                society.
-                            </p>
+
+                            <div class="mt-5">
+                                <h4 class="add_green">Good Governance, Democracy & Human Rights:</h4>
+                                <h5 class="mb-4">Amplifying the Voices of Youth and Women: Empowerment in Action</h5>
+                                <p>
+                                    At IAD! we steadfastly champion the tenets of good governance, and democracy
+                                    recognizing them as the cornerstone of an equitable and inclusive society. Our
+                                    unwavering dedication is centered on the empowerment of youth and women, fostering
+                                    their active engagement in decision-making processes.
+                                </p>
+                                <p>
+                                    We ardently advocate for amplifying the voices of young people and women, seamlessly
+                                    integrating them into the tapestry of local, national, and global policymaking. Our
+                                    tireless efforts extend to advocating for the implementation of crucial policies and
+                                    frameworks that foster the development of youth and women.
+                                </p>
+                                <p>
+                                    By equipping today's youth and women with the necessary tools and platforms to shape
+                                    tomorrow's world, we are committed to paving the way for a more just and progressive
+                                    society.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section-padding" id="projects">
+        <section class="section-padding bg-light" id="projects">
             <div class="container">
-                <h2 class="add_green text-center mb-5">
-                    Projects 2023-2025
-                </h2>
+                <div class="section-title">
+                    <h2>Projects <span class="add_green">2023-2025</span></h2>
+                </div>
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <a href="#" class="project-card">
+                    <div class="col-lg-6 col-md-6 col-12 mb-4">
+                        <div class="project-card">
+                            <img src="/images/water.jpeg" class="img-fluid" alt="The Ignite African Youth Project">
+                            <div class="project-card-body">
+                                <h4>Creating Ripples of Change: Turning Plastic Waste into Clean Water and Community
+                                    Empowerment</h4>
+                                <p>
+                                    Every bottle purchased provides 10 years of water access. Be the drop that sends
+                                    ripples throughout the world By Young changemakers with Didomi USA turn plastic
+                                    waste into hope—funding clean water wells, empowering Kenyan communities, and
+                                    protecting our planet.
+                                </p>
+                                <div class="mt-auto pt-3">
+                                    <span class="badge bg-primary">Environment</span>
+                                    <span class="badge bg-success">Community</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-12 mb-4">
+                        <div class="project-card">
                             <img src="/images/image6.jpeg" class="img-fluid" alt="The Ignite African Youth Project">
                             <div class="project-card-body">
-                                <h4>
-                                    The Ignite African Youth Project-
-                                </h4>
+                                <h4>The Ignite African Youth Project</h4>
                                 <p>
-                                    A collaborative initiative between the European Partnership for Democracy (EPD) and
-                                    the Youth Democracy Cohort, executed
-                                    by The Youth Café (TYC) convening IAD, is dedicated to amplifying youth involvement,
-                                    with a specific emphasis on
-                                    empowering young women across Africa. This project aims to elevate their
-                                    participation in democratic processes by
-                                    bolstering and enriching their political and civic capabilities, enabling them to
-                                    assume active and impactful roles.
+
+                                    The Ignite African Youth Project: 2023. implemented by The Youth Café in
+                                    collaboration with IAD CBO, to advances youth civic inclusive democratic
+                                    participation across Africa.
                                 </p>
+                                <div class="mt-auto pt-3">
+                                    <span class="badge bg-primary">Democracy</span>
+                                    <span class="badge bg-success">Youth</span>
+                                </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <a href="#" class="project-card">
-                            <img src="/images/image5.jpeg" class="img-fluid"
+
+                    <div class="col-lg-6 col-md-6 col-12 mb-4">
+                        <div class="project-card">
+                            <img src="/images/empower.jpeg" class="img-fluid"
                                 alt="Economic Empowerment, Environment & Livelihoods">
                             <div class="project-card-body">
-                                <h4>
-                                    Economic Empowerment, Environment & Livelihoods-
-                                </h4>
+                                <h4>Youth Dialogs</h4>
                                 <p>
-                                    IAD is dedicated to uplifting youth and women in rural Homabay and Migori counties,
-                                    Kenya, addressing economic
-                                    hardships, unemployment, and environmental barriers. Through innovative initiatives
-                                    and policy advocacy, we aim to
-                                    strengthen economic empowerment locally and beyond. Collaboration with like-minded
-                                    organizations is crucial to nurturing
-                                    sustainable livelihoods. Together, we envision a future where economic empowerment
-                                    and environmental sustainability
-                                    unlock the potential of youth and women in these communities.
+                                    Strengthening the Power of Youth Voices in partnership Siasa place empowers young leaders through training and dialogue forums, enhancing their governance participation and creating meaningful engagement spaces between youth. Communities, and leaders at county and national levels.
                                 </p>
+                                <div class="mt-auto pt-3">
+                                    <span class="badge bg-primary">Youth</span>
+                                    <span class="badge bg-success">Dialogs</span>
+                                </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <a href="#" class="project-card">
-                            <img src="/images/image7.jpeg" class="img-fluid" alt="Social Wellbeing and gender equity">
+
+                    <div class="col-lg-6 col-md-6 col-12 mb-4">
+                        <div class="project-card">
+                            <img src="/images/tomatoes.jpeg" class="img-fluid" alt="Social Wellbeing and gender equity">
                             <div class="project-card-body">
-                                <h4>
-                                    Social Wellbeing and gender equity-
-                                </h4>
+                                <h4>Youth economic empowerment</h4>
                                 <p>
-                                    We Invest in Youth and women for a Sustainable Future.
-                                    <br>
-                                    At the core of our mission lies a multifaceted approach embracing table banking,
-                                    vocational training, and regenerative
-                                    agriculture. By investing in these pillars, we empower youth and women to cultivate
-                                    sustainable livelihoods. Through
-                                    table banking, we promote financial inclusivity, enabling them to access capital.
-                                    Vocational training equips them with
-                                    skills for diverse industries, fostering independence. Our focus on regenerative
-                                    agriculture ensures ecological
-                                    stewardship while enhancing food security. All these efforts intertwine, promoting
-                                    social well-being and advancing
-                                    gender equity. We strive not just to address unemployment but to create an inclusive
-                                    landscape where every individual
-                                    thrives, shaping a sustainable future for all.
+                                   Youth Voice Project 2025, in partnership with SHOFCO, supports IAD in advancing youth self-employment initiatives through regenerative agriculture, tailoring, dressmaking, and curtain-making, empowering young people with sustainable livelihoods and entrepreneurial skills for lasting impact.
                                 </p>
+                                <div class="mt-auto pt-3">
+                                    <span class="badge bg-primary">Gender Equity</span>
+                                    <span class="badge bg-success">Self employment</span>
+                                </div>
                             </div>
-                        </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12 mb-4">
+                        <div class="project-card">
+                            <img src="/images/digital.jpeg" class="img-fluid" alt="Social Wellbeing and gender equity">
+                            <div class="project-card-body">
+                                <h4>Digital Safety Bootcamps</h4>
+                                <p>
+                                    Since 2025, IAD, in partnership with Trustlab and DW Akademie, has incubated the
+                                    initiative Together with Young People for Zero Tolerance to Online Harassment,
+                                    fostering digital safety, resilience, and responsible online engagement.
+                                </p>
+                                <div class="mt-auto pt-3">
+                                    <span class="badge bg-primary">Digital Wellbeing</span>
+                                    <span class="badge bg-success">Safety Awareness</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -442,7 +680,7 @@
 
     <footer class="contact-section section-padding" id="section_5">
         <div class="container">
-            <div class="row">
+            <div class="row gy-4">
                 <div class="col-lg-5 col-12 mx-auto">
                     <form class="custom-form ebook-download-form bg-white shadow" action="#" method="post" role="form">
                         <div class="text-center mb-5">

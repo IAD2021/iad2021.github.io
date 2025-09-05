@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"
-        content="Welcome to the Initiative for Awareness and Development (IAD). Founded in 2021, our organization has dedicated itself to pioneering innovative approaches to uplift underserved populations and promote development in Kenya.">
+        content="Support Initiative for Awareness and Development (IAD). Your donation helps empower communities in Kenya.">
     <meta name="author" content="IAD">
-    <title>IAD - Team & Advisory Members</title>
+    <title>IAD - Donate</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -64,7 +64,7 @@
         }
 
         .hero {
-            min-height: 40vh;
+            min-height: 60vh;
             display: flex;
             align-items: center;
             background: linear-gradient(135deg, var(--primary-light) 0%, #f0f2f5 100%);
@@ -99,8 +99,6 @@
         .hero-content {
             position: relative;
             z-index: 2;
-            text-align: center;
-            width: 100%;
         }
 
         .hero-content h1 {
@@ -113,169 +111,100 @@
         .hero-content p {
             font-size: 1.2rem;
             color: var(--gray);
-            max-width: 700px;
-            margin: 0 auto;
+            margin-bottom: 30px;
         }
 
-        .team-section {
-            padding: 80px 0;
-            background-color: var(--light);
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .team-member-card {
-            background-color: var(--light);
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            padding: 30px;
-            text-align: center;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .team-member-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-        }
-
-        .team-member-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary), var(--primary-light));
-        }
-
-        .team-member-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 20px;
-            border: 4px solid var(--primary-light);
-            box-shadow: var(--box-shadow);
-        }
-
-        .member-name {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 5px;
-        }
-
-        .member-title {
-            font-size: 1rem;
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .member-bio {
-            font-size: 0.95rem;
-            color: var(--gray);
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: var(--primary-light);
-            color: var(--primary);
-            transition: var(--transition);
-        }
-
-        .social-links a:hover {
+        .custom-btn {
             background-color: var(--primary);
             color: var(--light);
-            transform: translateY(-3px);
-        }
-
-        .advisory-section {
-            padding: 80px 0;
-            background-color: var(--light-gray);
-        }
-
-        .advisory-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .advisory-card {
-            background-color: var(--light);
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            padding: 30px;
-            text-align: center;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
             transition: var(--transition);
         }
 
-        .advisory-card:hover {
+        .custom-btn:hover {
+            background-color: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .donation-options {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+
+        .donation-card {
+            background-color: var(--light);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 40px;
+            margin-bottom: 30px;
+            transition: var(--transition);
+            height: 100%;
+            border-top: 4px solid var(--primary);
+        }
+
+        .donation-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         }
 
-        .advisory-image {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 20px;
-            border: 4px solid var(--primary-light);
-            box-shadow: var(--box-shadow);
-        }
-
-        .advisory-name {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 10px;
-        }
-
-        .advisory-role {
-            font-size: 1.1rem;
+        .donation-icon {
+            font-size: 2.5rem;
             color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
-        .team-stats {
+        .donation-card h3 {
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .donation-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .donation-info {
+            background-color: var(--light-gray);
+            padding: 80px 0;
+        }
+
+        .info-card {
+            background-color: var(--light);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 40px;
+            margin-bottom: 30px;
+            transition: var(--transition);
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .impact-section {
             padding: 80px 0;
             background-color: var(--light);
         }
 
-        .stat-item {
+        .impact-item {
             text-align: center;
             padding: 30px;
         }
 
-        .stat-number {
-            font-size: 3rem;
+        .impact-number {
+            font-size: 2.5rem;
             font-weight: 700;
             color: var(--primary);
             margin-bottom: 10px;
         }
 
-        .stat-label {
+        .impact-label {
             font-size: 1.1rem;
             color: var(--gray);
         }
@@ -295,17 +224,8 @@
                 font-size: 2rem;
             }
             
-            .team-grid, .advisory-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .team-member-card, .advisory-card {
-                padding: 20px;
-            }
-            
-            .team-member-image, .advisory-image {
-                width: 130px;
-                height: 130px;
+            .donation-card {
+                padding: 25px;
             }
         }
     </style>
@@ -313,7 +233,7 @@
 
 <body>
     <main>
-        <nav class="navbar navbar-expand-lg">
+         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="index.html">
                     <img src="./images/iad.png" class="navbar-brand-icon" width="50%" alt="">
@@ -331,13 +251,13 @@
                             <a class="nav-link" href="about.html">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="team.html">Team & Advisory</a>
+                            <a class="nav-link" href="team.html">Team & Advisory</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="gallery.html">Gallery</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="donation.html">Donate</a>
+                            <a class="nav-link active" href="donation.html">Donate</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="contact.html">Contact</a>
@@ -350,103 +270,121 @@
 
         <section class="hero">
             <div class="container">
-                <div class="hero-content">
-                    <h1>Our Team & Advisory Members</h1>
-                    <p>Meet the passionate individuals and advisors driving IAD's mission to create positive change in communities across Kenya.</p>
+                <div class="row">
+                    <div class="col-lg-8 col-12">
+                        <div class="hero-content">
+                            <h1>Support Our Mission</h1>
+                            <p>Your generosity fuels our work to build a better future for Southwestern Kenya communities. Every contribution counts!</p>
+                            <a href="#donate-options" class="btn custom-btn">Donate Now</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="team-section">
+        <section class="donation-options" id="donate-options">
             <div class="container">
                 <div class="section-title">
-                    <h2>Our <span class="text-primary">Team Members</span></h2>
+                    <h2>How to <span class="text-primary">Donate</span></h2>
                 </div>
-
-                <div class="team-grid">
-                    <div class="team-member-card">
-                        <img src="/images/vercy.jpeg" alt="Vercy Cinthia" class="team-member-image">
-                        <h3 class="member-name">Vercy Cinthia</h3>
-                        <p class="member-title">Communications Officer</p>
-                        <p class="member-bio">Visionary and experienced leader with a passion for using IT solutions in community development and sustainable change.</p>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-12 mb-4">
+                        <div class="donation-card">
+                            <div class="donation-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h3>Online Donation</h3>
+                            <p>Donate securely through our website using your credit card or PayPal account.</p>
+                            <a href="#" class="btn custom-btn disabled">Coming soon</a>
+                        </div>
                     </div>
-
-                    <div class="team-member-card">
-                        <img src="/images/jennifer.jpeg" alt="Jennifer Kerubo" class="team-member-image">
-                        <h3 class="member-name">Jennifer Kerubo</h3>
-                        <p class="member-title">Finance manager</p>
-                        <p class="member-bio">Passionate finance dedicated to empowering women and youth in our communities.</p>
+                    <div class="col-lg-6 col-md-6 col-12 mb-4">
+                        <div class="donation-card">
+                            <div class="donation-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h3>Mobile Payments</h3>
+                            <p>Use M-Pesa to make a quick and secure donation directly from your phone.</p>
+                            <p class="fw-bold mt-3">M-Pesa Paybill: 123456<br>Account: IAD</p>
+                        </div>
                     </div>
-
-                    <div class="team-member-card">
-                        <img src="/images/irene.jpeg" alt="Irene Auma" class="team-member-image">
-                        <h3 class="member-name">Irene Auma</h3>
-                        <p class="member-title">Project Youth Champion</p>
-                        <p class="member-bio">Impact-driven professional ensuring our programs deliver measurable impact.</p>
+                    <div class="col-lg-6 col-md-6 col-12 mb-4">
+                        <div class="donation-card">
+                            <div class="donation-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <h3>Bank Transfer</h3>
+                            <p>Transfer funds directly to our bank account for your donation.</p>
+                            <p class="fw-bold mt-3">Bank: KCB Homa Bay Branch<br>Account Name: Initiative for Awareness and Development<br>Account Number: 0123456789</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12 mb-4">
+                        <div class="donation-card">
+                            <div class="donation-icon">
+                                <i class="fas fa-box"></i>
+                            </div>
+                            <h3>In-Kind Donations</h3>
+                            <p>We accept physical donations of goods, equipment, and supplies.</p>
+                            <p class="fw-bold mt-3">Contact us for drop-off locations and accepted items.</p>
+                            <a href="#contact" class="btn custom-btn">Contact Us</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="advisory-section">
+        <section class="impact-section">
             <div class="container">
                 <div class="section-title">
-                    <h2>Our <span class="text-primary">Advisory Members</span></h2>
+                    <h2>Your <span class="text-primary">Impact</span></h2>
+                    <p class="lead">See how your donations are making a difference in our communities</p>
                 </div>
-
-                <div class="advisory-grid">
-                    <div class="advisory-card">
-                        <img src="/images/image8.jpeg" alt="Anaa Saraj Jibicho" class="advisory-image">
-                        <h3 class="advisory-name">Anaa Saraj Jibicho</h3>
-                        <p class="advisory-role">Strategic Advisor</p>
-                        <p class="member-bio">Providing strategic guidance and expertise to advance IAD's mission and impact.</p>
-                        <!-- <div class="social-links">
-                            <a href="#"><i class="bi bi-linkedin"></i></a>
-                            <a href="#"><i class="bi bi-twitter"></i></a>
-                            <a href="#"><i class="bi bi-envelope"></i></a>
-                        </div> -->
-                    </div>
-
-                    <div class="advisory-card">
-                        <img src="/images/image9.jpeg" alt="Brian Bishop" class="advisory-image">
-                        <h3 class="advisory-name">Brian Bishop</h3>
-                        <p class="advisory-role">Development Advisor</p>
-                        <p class="member-bio">Bringing extensive experience in international development and community empowerment.</p>
-                        <!-- <div class="social-links">
-                            <a href="#"><i class="bi bi-linkedin"></i></a>
-                            <a href="#"><i class="bi bi-twitter"></i></a>
-                            <a href="#"><i class="bi bi-envelope"></i></a>
-                        </div> -->
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="team-stats">
-            <div class="container">
                 <div class="row">
                     <div class="col-md-3 col-6 mb-4">
-                        <div class="stat-item">
-                            <div class="stat-number">15+</div>
-                            <div class="stat-label">Projects Completed</div>
+                        <div class="impact-item">
+                            <div class="impact-number">20,000+</div>
+                            <div class="impact-label">Lives Impacted</div>
                         </div>
                     </div>
                     <div class="col-md-3 col-6 mb-4">
-                        <div class="stat-item">
-                            <div class="stat-number">10+</div>
-                            <div class="stat-label">Team & Advisors</div>
+                        <div class="impact-item">
+                            <div class="impact-number">15+</div>
+                            <div class="impact-label">Communities Served</div>
                         </div>
                     </div>
-                    <div class="col-md-3 col-6">
-                        <div class="stat-item">
-                            <div class="stat-number">20,000+</div>
-                            <div class="stat-label">Lives Impacted</div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="impact-item">
+                            <div class="impact-number">100%</div>
+                            <div class="impact-label">Direct to Programs</div>
                         </div>
                     </div>
-                    <div class="col-md-3 col-6">
-                        <div class="stat-item">
-                            <div class="stat-number">4+</div>
-                            <div class="stat-label">Years of Service</div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="impact-item">
+                            <div class="impact-number">4+</div>
+                            <div class="impact-label">Years of Service</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="donation-info" id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="info-card">
+                            <h3 class="text-center mb-4">Need More Information?</h3>
+                            <p class="text-center">If you have any questions about donating or would like to discuss other ways to support our work, please contact us:</p>
+                            <div class="text-center mt-4">
+                                <p class="mb-2">
+                                    <i class="bi bi-envelope me-2"></i>
+                                    <a href="mailto:info@iadorganization.org" class="contact-link">info@iadorganization.org</a>
+                                </p>
+                                <p>
+                                    <i class="bi bi-telephone me-2"></i>
+                                    <a href="tel:0795760185" class="contact-link">+254 795 760185</a>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
