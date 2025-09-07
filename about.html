@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/bootstrap-icons.css" rel="stylesheet">
+    <link href="./css/whatsapp.css" rel="stylesheet">
     <link href="./css/templatemo-ebook-landing.css" rel="stylesheet">
     <script src='https://kit.fontawesome.com/3c4e8cd21a.js' crossorigin='anonymous'></script>
     <style>
@@ -319,6 +320,77 @@
             .stat-number {
                 font-size: 2.5rem;
             }
+        }
+
+        .sdgs-section {
+            background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sdgs-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" opacity="0.05"><circle cx="50" cy="50" r="40" fill="%232c974b"/></svg>');
+            z-index: 0;
+        }
+
+        .sdg-wheel {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .sdg-wheel-img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: transform 1s ease;
+        }
+
+        .sdg-wheel:hover .sdg-wheel-img {
+            transform: rotate(15deg);
+        }
+
+        .sdg-wheel::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+            opacity: 0.3;
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+
+            50% {
+                transform: scale(1.05);
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+        }
+
+        .sdg-commitment {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
         }
     </style>
 </head>
@@ -631,7 +703,10 @@
                             <div class="project-card-body">
                                 <h4>Youth Dialogs</h4>
                                 <p>
-                                    Strengthening the Power of Youth Voices in partnership Siasa place empowers young leaders through training and dialogue forums, enhancing their governance participation and creating meaningful engagement spaces between youth. Communities, and leaders at county and national levels.
+                                    Strengthening the Power of Youth Voices in partnership Siasa place empowers young
+                                    leaders through training and dialogue forums, enhancing their governance
+                                    participation and creating meaningful engagement spaces between youth. Communities,
+                                    and leaders at county and national levels.
                                 </p>
                                 <div class="mt-auto pt-3">
                                     <span class="badge bg-primary">Youth</span>
@@ -647,7 +722,10 @@
                             <div class="project-card-body">
                                 <h4>Youth economic empowerment</h4>
                                 <p>
-                                   Youth Voice Project 2025, in partnership with SHOFCO, supports IAD in advancing youth self-employment initiatives through regenerative agriculture, tailoring, dressmaking, and curtain-making, empowering young people with sustainable livelihoods and entrepreneurial skills for lasting impact.
+                                    Youth Voice Project 2025, in partnership with SHOFCO, supports IAD in advancing
+                                    youth self-employment initiatives through regenerative agriculture, tailoring,
+                                    dressmaking, and curtain-making, empowering young people with sustainable
+                                    livelihoods and entrepreneurial skills for lasting impact.
                                 </p>
                                 <div class="mt-auto pt-3">
                                     <span class="badge bg-primary">Gender Equity</span>
@@ -671,6 +749,37 @@
                                     <span class="badge bg-success">Safety Awareness</span>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding sdgs-section" id="sdgs">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Commitment to the <span class="add_green">Sustainable Development Goals</span></h2>
+                    <p class="sub-heading">
+                        IAD integrates all 12 SDGs into our holistic approach to community development
+                    </p>
+                </div>
+
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-12 mb-5 mb-lg-0">
+                        <div class="sdg-commitment">
+                            <p>At IAD, we recognize that sustainable development requires an integrated approach. Our
+                                programs are designed to address the interconnected nature of the Sustainable
+                                Development Goals, creating synergistic impacts across all 12 focus areas.</p>
+                            <p>By aligning our work with the global agenda, we ensure that our local efforts contribute
+                                to worldwide progress, creating a better future for all Kenyans while being part of the
+                                global movement for sustainable development.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-12">
+                        <div class="sdg-wheel">
+                            <img src="/images/sdgs-wheel.png" class="sdg-wheel-img"
+                                alt="Sustainable Development Goals Wheel">
                         </div>
                     </div>
                 </div>
@@ -712,7 +821,7 @@
                 <div class="col-lg-6 col-12">
                     <h2 class="mb-4">Contact</h2>
                     <p class="mb-3">
-                        <i class="bi-geo-alt me-2"></i> Homabay, Kenya
+                        <i class="fa-solid fa-location-dot me-2"></i> Homabay, Kenya
                     </p>
                     <p class="mb-2">
                         <a href="tel: 0795760185" class="contact-link">
@@ -727,16 +836,20 @@
                     <h6 class="site-footer-title mt-5 mb-3">Social</h6>
                     <ul class="social-icon mb-4">
                         <li class="social-icon-item">
-                            <a href="#" class="social-icon-link bi-instagram"></a>
+                            <a href="https://www.instagram.com/iadorg360?utm_source=qr&igsh=b21laXc0NWlxbXFq"
+                                class="social-icon-link"><i class="fab fa-instagram"></i></a>
                         </li>
                         <li class="social-icon-item">
-                            <a href="#" class="social-icon-link bi-twitter"></a>
+                            <a href="https://x.com/IADorganization?t=055JCpiLhuYHnmRvdalzhQ&s=08"
+                                class="social-icon-link"><i class="fab fa-twitter"></i></a>
                         </li>
                         <li class="social-icon-item">
-                            <a href="#" class="social-icon-link bi-facebook"></a>
+                            <a href="https://www.facebook.com/profile.php?id=100091511272227&mibextid=rS40aB7S9Ucbxw6v"
+                                class="social-icon-link"><i class="fab fa-facebook-f"></i></a>
                         </li>
                         <li class="social-icon-item">
-                            <a href="#" class="social-icon-link bi-whatsapp"></a>
+                            <a href="https://wa.me/254795760185" class="social-icon-link"><i
+                                    class="fab fa-whatsapp"></i></a>
                         </li>
                     </ul>
                     <p class="copyright-text">
@@ -752,6 +865,12 @@
     <script src="./js/jquery.sticky.js"></script>
     <script src="./js/click-scroll.js"></script>
     <script src="./js/custom.js"></script>
+
+    <a href="https://wa.me  /254795760185" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <div class="notification">1</div>
+        <div class="tooltip">Chat with us!</div>
+    </a>
 </body>
 
 </html>
