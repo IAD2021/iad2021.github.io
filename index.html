@@ -203,52 +203,87 @@
         }
 
         .partners-section {
-            padding: 80px 0;
+            padding: 100px 0;
             background-color: var(--light-gray);
         }
 
+        .partners-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
         .partners-title {
-            font-size: 2rem;
+            font-size: 2.8rem;
             font-weight: 700;
             color: var(--dark);
-            margin-bottom: 40px;
-            text-align: center;
+            margin: 0;
+            line-height: 1.2;
             position: relative;
-            padding-bottom: 15px;
+            padding-bottom: 20px;
+            flex-shrink: 0;
+            max-width: 250px;
         }
 
         .partners-title::after {
             content: '';
             position: absolute;
             bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 0;
             width: 80px;
-            height: 3px;
+            height: 4px;
             background-color: var(--primary);
+            border-radius: 2px;
         }
 
-        .partners-images {
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            flex-grow: 1;
+        }
+
+        .partner-item {
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 40px;
+            height: 100px;
         }
 
         .partner-image {
-            max-width: 180px;
-            height: auto;
+            max-width: 100%;
+            max-height: 100%;
             object-fit: contain;
-            transition: var(--transition);
-            filter: grayscale(100%);
+            transition: all 0.3s ease;
+        }
+
+        .partner-item:hover .partner-image {
+            transform: scale(1.1);
+            filter: grayscale(90%);
             opacity: 0.7;
         }
 
-        .partner-image:hover {
-            transform: scale(1.05);
-            filter: grayscale(0%);
-            opacity: 1;
+        @media (max-width: 992px) {
+            .partners-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .partners-title {
+                text-align: center;
+                max-width: none;
+            }
+
+            .partners-title::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr);
+                /* Forces a 2-column, 2-row layout */
+                gap: 30px;
+            }
         }
 
         .services-section {
@@ -682,7 +717,7 @@
                 <div class="row">
                     <div class="col-lg-8 col-12">
                         <div class="hero-content">
-                            <h1>IAD: Bridging Gaps, Creating Opportunities for Kenyan Development</h1>
+                            <h1>IAD: Promotes equity in all societal streams for youth and women</h1>
                             <a href="about.html" class="btn custom-btn me-3">Discover More</a>
                             <a href="donation.html" class="btn btn-outline-light">Support Our Cause</a>
                         </div>
@@ -710,16 +745,30 @@
             </div>
         </section>
 
-        <section class="partners-section">
+        <section class="partners-section section-padding">
             <div class="container">
-                <h3 class="partners-title">Our Partners</h3>
-                <div class="partners-images">
-                    <img src="./images/avatar/yc.png" class="partner-image" alt="The Youth Café">
-                    <img src="images/logo_part.png" class="partner-image" alt="Partner">
-                    <img src="images/hbc-logo.png" class="partner-image" alt="Homa Bay County">
-                    <img src="images/trustlab.jpg" class="partner-image" alt="Trustlab">
-                    <img src="images/siasaplace.png" class="partner-image" alt="Siasa Place">
-                    <img src="images/shofco.png" class="partner-image" alt="SHOFCO">
+                <div class="partners-content">
+                    <h3 class="partners-title">Our Partners</h3>
+                    <div class="partners-grid">
+                        <a href="#" class="partner-item">
+                            <img src="./images/avatar/yc.png" class="partner-image" alt="The Youth Café">
+                        </a>
+                        <a href="#" class="partner-item">
+                            <img src="images/logo_part.png" class="partner-image" alt="Partner">
+                        </a>
+                        <a href="#" class="partner-item">
+                            <img src="images/hbc-logo.png" class="partner-image" alt="Homa Bay County">
+                        </a>
+                        <a href="#" class="partner-item">
+                            <img src="images/trust-lab-logo.png" class="partner-image" alt="Trustlab">
+                        </a>
+                        <a href="#" class="partner-item">
+                            <img src="images/siasaplace.png" class="partner-image" alt="Siasa Place">
+                        </a>
+                        <a href="#" class="partner-item">
+                            <img src="images/shofco.png" class="partner-image" alt="SHOFCO">
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -727,7 +776,7 @@
         <section class="services-section">
             <div class="container">
                 <div class="section-title">
-                    <h2>Our <span class="text-primary">Focus Areas</span></h2>
+                    <h2>Our <span class="text-primary">Strategic Pillars</span></h2>
                     <p class="lead text-muted">Together with young people and women, we shape a just, inclusive and
                         resilient future.</p>
                 </div>
@@ -762,7 +811,7 @@
                 </div>
                 <div class="gallery-grid">
                     <div class="gallery-item">
-                        <img src="./images/gallery/IAD/Picture19.jpg" alt="Community Workshop">
+                        <img src="./images/IMG-20250911-WA0106.jpg" alt="Community Workshop">
                         <div class="gallery-overlay">
                             <div class="gallery-caption">Community Workshop</div>
                         </div>
@@ -774,7 +823,7 @@
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="./images/gallery/IAD/Picture23.jpg" alt="Team Collaboration">
+                        <img src="./images/IMG-20250911-WA0104.jpg" alt="Team Collaboration">
                         <div class="gallery-overlay">
                             <div class="gallery-caption">Team Collaboration</div>
                         </div>
@@ -819,25 +868,6 @@
                     </div>
 
                     <a href="donation.html" class="btn custom-btn btn-lg">Make a Donation</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta-section">
-            <div class="container">
-                <div class="cta-content">
-                    <div class="cta-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h2>Be Part of the Change for Safer Online Spaces!</h2>
-                    <p>Your voice can make a difference. Whether you choose to speak out or report abuse, your
-                        involvement helps protect girls, amplify voices, and build respectful digital communities.</p>
-                    <p>Take Action Today! Together, we can end online harassment and create a safe internet for
-                        everyone.</p>
-                    <div class="cta-buttons">
-                        <a href="contact.html" class="btn btn-outline-primary">Volunteer with Us</a>
-                        <a href="contact.html" class="btn btn-outline-primary">Partner with Us</a>
-                    </div>
                 </div>
             </div>
         </section>
@@ -940,7 +970,7 @@
                     clearInterval(timer);
                     currentValue = finalValue;
                 }
-                element.textContent = currentValue.toLocaleString();
+                element.textContent = currentValue.toLocaleString() + "+";
             }, 16);
         }
 
