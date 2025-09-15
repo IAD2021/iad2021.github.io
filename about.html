@@ -292,7 +292,7 @@
             left: -10px;
             right: -10px;
             bottom: -10px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
             transform: rotate(45deg);
         }
 
@@ -365,9 +365,9 @@
         .theory-arrow {
             text-align: center;
             margin: 30px 0;
-            color: var(--primary);
-            font-size: 2.5rem;
             position: relative;
+            height: 80px;
+            /* Added fixed height */
         }
 
         .theory-arrow::before {
@@ -376,10 +376,52 @@
             top: 50%;
             left: 50px;
             right: 50px;
-            height: 2px;
+            height: 3px;
             background: var(--gradient);
             transform: translateY(-50%);
-            z-index: -1;
+            z-index: 1;
+        }
+
+        .theory-arrow i {
+            color: var(--primary);
+            font-size: 2.5rem;
+            background: white;
+            padding: 15px;
+            border-radius: 50%;
+            border: 3px solid var(--primary);
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 4px 10px rgba(44, 151, 75, 0.2);
+            transition: var(--transition);
+        }
+
+        .theory-arrow i:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(44, 151, 75, 0.3);
+        }
+
+        /* Animation for the arrow */
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .theory-arrow i {
+            animation: bounce 2s infinite;
         }
 
         .theory-conditions {
@@ -619,20 +661,20 @@
             .section-padding {
                 padding: 80px 0;
             }
-            
+
             .hero {
                 padding: 120px 0 80px;
             }
-            
+
             .hero h1 {
                 font-size: 2.8rem;
             }
-            
+
             .stats-container {
                 margin-top: 0;
                 margin-bottom: 40px;
             }
-            
+
             .sdg-content {
                 flex-direction: column;
                 gap: 30px;
@@ -642,13 +684,14 @@
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             .theory-conditions {
                 flex-direction: column;
                 align-items: center;
             }
-            
-            .theory-outcome, .theory-condition {
+
+            .theory-outcome,
+            .theory-condition {
                 width: 100%;
             }
         }
@@ -657,42 +700,43 @@
             .section-padding {
                 padding: 60px 0;
             }
-            
+
             .hero {
                 padding: 100px 0 60px;
                 clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
             }
-            
+
             .hero h1 {
                 font-size: 2.2rem;
             }
-            
+
             .section-title h2 {
                 font-size: 2rem;
             }
-            
+
             .stat-number {
                 font-size: 2.2rem;
             }
-            
-            .content-block, .stats-container {
+
+            .content-block,
+            .stats-container {
                 padding: 25px;
             }
-            
+
             .mv-card {
                 padding: 30px 20px;
             }
-            
+
             .heart-letter {
                 width: 60px;
                 height: 60px;
                 font-size: 1.5rem;
             }
-            
+
             .project-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .cta-section {
                 padding: 80px 0;
             }
@@ -711,22 +755,23 @@
             .hero h1 {
                 font-size: 1.8rem;
             }
-            
+
             .hero p.lead {
                 font-size: 1rem;
             }
-            
+
             .section-title h2 {
                 font-size: 1.8rem;
             }
-            
+
             .heart-letter {
                 width: 50px;
                 height: 50px;
                 font-size: 1.2rem;
             }
 
-            .theory-outcome, .theory-condition {
+            .theory-outcome,
+            .theory-condition {
                 min-width: 100%;
                 padding: 20px;
             }
@@ -775,14 +820,18 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-12">
                         <div class="hero-content">
-                            <h1 class="mb-4">About <span class="add_green">Initiative for Awareness and Development</span></h1>
+                            <h1 class="mb-4">About <span class="add_green">Initiative for Awareness and
+                                    Development</span></h1>
                             <p class="lead">
                                 The Initiative for Awareness and Development (IAD) is a development- and social
                                 impact-driven organization that works with young people, women, supporters, and partners
-                                to create just, inclusive communities ensuring equity and opportunity reach every corner, all the way to the last mile.
+                                to create just, inclusive communities ensuring equity and opportunity reach every
+                                corner, all the way to the last mile.
                             </p>
                             <p class="lead">
-                                To do this, we tackle the root causes of inequality and exclusion, working with young people and women to amplify their voices, expand opportunities, and create lasting solutions.
+                                To do this, we tackle the root causes of inequality and exclusion, working with young
+                                people and women to amplify their voices, expand opportunities, and create lasting
+                                solutions.
                             </p>
                         </div>
                     </div>
@@ -790,13 +839,17 @@
                         <div class="position-relative">
                             <div class="row g-3">
                                 <div class="col-6">
-                                    <img src="/images/image2.jpeg" class="img-fluid rounded shadow" alt="IAD Community Work" style="height: 250px; width: 100%; object-fit: cover;">
+                                    <img src="/images/image2.jpeg" class="img-fluid rounded shadow"
+                                        alt="IAD Community Work" style="height: 250px; width: 100%; object-fit: cover;">
                                 </div>
                                 <div class="col-6 mt-5">
-                                    <img src="/images/image6.jpeg" class="img-fluid rounded shadow" alt="IAD Youth Programs" style="height: 250px; width: 100%; object-fit: cover;">
+                                    <img src="/images/image6.jpeg" class="img-fluid rounded shadow"
+                                        alt="IAD Youth Programs" style="height: 250px; width: 100%; object-fit: cover;">
                                 </div>
                                 <div class="col-8 mx-auto">
-                                    <img src="/images/water.jpeg" class="img-fluid rounded shadow" alt="IAD Environmental Initiatives" style="height: 250px; width: 100%; object-fit: cover;">
+                                    <img src="/images/water.jpeg" class="img-fluid rounded shadow"
+                                        alt="IAD Environmental Initiatives"
+                                        style="height: 250px; width: 100%; object-fit: cover;">
                                 </div>
                             </div>
                         </div>
@@ -843,7 +896,15 @@
                             <div class="story-timeline">
                                 <div class="timeline-item">
                                     <strong>2020</strong>
-                                    <p>As the world stood still during the COVID-19 lockdown, a small circle of young visionaries met in the heart of Shauriyako, Homa Bay County Kenya. What began as an informal hangout in an informal settlement quickly evolved into a powerful idea: meaningful development begins with critical awareness. We saw a gap projects often arrived before people were truly prepared to own them. We believed the first investment must be in mindset: building informed, inspired communities ready to shape their own futures. Out of that conviction, Initiative for Awareness and Development (IAD) was born merging awareness and action, and driving change that lasts.</p>
+                                    <p>As the world stood still during the COVID-19 lockdown, a small circle of young
+                                        visionaries met in the heart of Shauriyako, Homa Bay County Kenya. What began as
+                                        an informal hangout in an informal settlement quickly evolved into a powerful
+                                        idea: meaningful development begins with critical awareness. We saw a gap
+                                        projects often arrived before people were truly prepared to own them. We
+                                        believed the first investment must be in mindset: building informed, inspired
+                                        communities ready to shape their own futures. Out of that conviction, Initiative
+                                        for Awareness and Development (IAD) was born merging awareness and action, and
+                                        driving change that lasts.</p>
                                 </div>
                                 <div class="timeline-item">
                                     <strong>2021</strong>
@@ -869,7 +930,9 @@
                     <div class="col-lg-8">
                         <div class="content-block text-center fade-in">
                             <h3 class="add_green mb-4">Our Core Values</h3>
-                            <p>At IAD, we are guided by five core principles the heartbeat of our work and the compass for our actions. Together, they form the acronym HEART, inspiring everything we do to create lasting change.</p>
+                            <p>At IAD, we are guided by five core principles the heartbeat of our work and the compass
+                                for our actions. Together, they form the acronym HEART, inspiring everything we do to
+                                create lasting change.</p>
 
                             <div class="heart-acronym">
                                 <div class="heart-letter">H</div>
@@ -902,7 +965,8 @@
                                 <i class="fas fa-bullseye"></i>
                             </div>
                             <h3>Our Mission</h3>
-                            <p>To promote the welfare and involvement of young people and women in development through partnerships, capacity building and advocacy.</p>
+                            <p>To promote the welfare and involvement of young people and women in development through
+                                partnerships, capacity building and advocacy.</p>
                         </div>
                     </div>
                 </div>
@@ -915,49 +979,54 @@
                 <div class="section-title">
                     <h2>Our <span class="add_green">Theory of Change</span></h2>
                 </div>
-                
+
                 <div class="theory-container">
                     <div class="theory-intro fade-in">
-                        <p class="lead">At IAD, we see change as both a journey and a design. It begins with a shift in consciousness—a recognition that young people and women are not passive recipients of aid, but agents of transformation.</p>
+                        <p class="lead">At IAD, we see change as both a journey and a design. It begins with a shift in
+                            consciousness—a recognition that young people and women are not passive recipients of aid,
+                            but agents of transformation.</p>
                     </div>
-                    
+
+                    <div class="theory-conditions">
+                        <div class="theory-condition fade-in">
+                            <h4>IF</h4>
+                            <p>Women & young people claim their rights and exercise their responsibilities in
+                                governance.</p>
+                        </div>
+
+                        <div class="theory-condition fade-in">
+                            <h4>IF</h4>
+                            <p>They attain sustainable livelihoods and equitable economic opportunities.</p>
+                        </div>
+
+                        <div class="theory-condition fade-in">
+                            <h4>IF</h4>
+                            <p>Societies uphold inclusive wellbeing, care, protection, and social security.</p>
+                        </div>
+                    </div>
+                    <div class="theory-arrow fade-in">
+                        <i class="fas fa-long-arrow-alt-down"></i>
+                    </div>
                     <div class="theory-flow">
                         <div class="theory-outcomes">
                             <div class="theory-outcome fade-in">
                                 <h4>THEN</h4>
-                                <p>Communities will transform into just, inclusive, resilient, and sustainable societies.</p>
+                                <p>Communities will transform into just, inclusive, resilient, and sustainable
+                                    societies.</p>
                             </div>
-                            
+
                             <div class="theory-outcome fade-in">
                                 <h4>AND</h4>
-                                <p>Governments and institutions will deliver inclusive, equitable, and responsive services that meet the needs of all.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="theory-arrow fade-in">
-                            <i class="fas fa-long-arrow-alt-down"></i>
-                        </div>
-                        
-                        <div class="theory-conditions">
-                            <div class="theory-condition fade-in">
-                                <h4>IF</h4>
-                                <p>Women & young people claim their rights and exercise their responsibilities in governance.</p>
-                            </div>
-                            
-                            <div class="theory-condition fade-in">
-                                <h4>IF</h4>
-                                <p>They attain sustainable livelihoods and equitable economic opportunities.</p>
-                            </div>
-                            
-                            <div class="theory-condition fade-in">
-                                <h4>IF</h4>
-                                <p>Societies uphold inclusive wellbeing, care, protection, and social security.</p>
+                                <p>Governments and institutions will deliver inclusive, equitable, and responsive
+                                    services that meet the needs of all.</p>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="theory-belief fade-in">
-                        <p>Resting on a profound belief that meaningful development begins with critical awareness, and that the first investment must be in mindset: building informed, inspired communities ready to shape their own futures.</p>
+                        <p>Resting on a profound belief that meaningful development begins with critical awareness, and
+                            that the first investment must be in mindset: building informed, inspired communities ready
+                            to shape their own futures.</p>
                     </div>
                 </div>
             </div>
@@ -975,7 +1044,10 @@
                         </div>
                         <div class="project-content">
                             <h4>Creating Ripples of Change</h4>
-                            <p>Every bottle purchased provides 10 years of water access. Be the drop that sends ripples throughout the world By Young changemakers with Didomi USA turn plastic waste into hope—funding clean water wells, empowering Kenyan communities, and protecting our planet.</p>
+                            <p>Every bottle purchased provides 10 years of water access. Be the drop that sends ripples
+                                throughout the world By Young changemakers with Didomi USA turn plastic waste into
+                                hope—funding clean water wells, empowering Kenyan communities, and protecting our
+                                planet.</p>
                             <div class="project-tags">
                                 <span class="project-tag">Environment</span>
                                 <span class="project-tag">Community</span>
@@ -989,7 +1061,9 @@
                         </div>
                         <div class="project-content">
                             <h4>The Ignite African Youth Project</h4>
-                            <p>The Ignite African Youth Project: 2023. implemented by The Youth Café in collaboration with IAD CBO, to advances youth civic inclusive democratic participation across Africa.</p>
+                            <p>The Ignite African Youth Project: 2023. implemented by The Youth Café in collaboration
+                                with IAD CBO, to advances youth civic inclusive democratic participation across Africa.
+                            </p>
                             <div class="project-tags">
                                 <span class="project-tag">Democracy</span>
                                 <span class="project-tag">Youth</span>
@@ -1003,7 +1077,9 @@
                         </div>
                         <div class="project-content">
                             <h4>Youth Dialogs</h4>
-                            <p>Strengthening the Power of Youth Voices in partnership Siasa place empowers young leaders through training and dialogue forums, enhancing their governance participation and creating meaningful engagement spaces.</p>
+                            <p>Strengthening the Power of Youth Voices in partnership Siasa place empowers young leaders
+                                through training and dialogue forums, enhancing their governance participation and
+                                creating meaningful engagement spaces.</p>
                             <div class="project-tags">
                                 <span class="project-tag">Youth</span>
                                 <span class="project-tag">Dialogs</span>
@@ -1017,7 +1093,9 @@
                         </div>
                         <div class="project-content">
                             <h4>Youth economic empowerment</h4>
-                            <p>Youth Voice Project 2025, in partnership with SHOFCO, supports IAD in advancing youth self-employment initiatives through regenerative agriculture, tailoring, dressmaking, and curtain-making.</p>
+                            <p>Youth Voice Project 2025, in partnership with SHOFCO, supports IAD in advancing youth
+                                self-employment initiatives through regenerative agriculture, tailoring, dressmaking,
+                                and curtain-making.</p>
                             <div class="project-tags">
                                 <span class="project-tag">Gender Equity</span>
                                 <span class="project-tag">Self employment</span>
@@ -1031,7 +1109,9 @@
                         </div>
                         <div class="project-content">
                             <h4>Digital Safety Bootcamps</h4>
-                            <p>Since 2025, IAD, in partnership with Trustlab and DW Akademie, has incubated the initiative Together with Young People for Zero Tolerance to Online Harassment, fostering digital safety, resilience, and responsible online engagement.</p>
+                            <p>Since 2025, IAD, in partnership with Trustlab and DW Akademie, has incubated the
+                                initiative Together with Young People for Zero Tolerance to Online Harassment, fostering
+                                digital safety, resilience, and responsible online engagement.</p>
                             <div class="project-tags">
                                 <span class="project-tag">Digital Wellbeing</span>
                                 <span class="project-tag">Safety Awareness</span>
@@ -1053,12 +1133,16 @@
 
                 <div class="sdg-content">
                     <div class="sdg-text fade-in">
-                        <p>At IAD, we recognize that sustainable development requires an integrated approach. Our programs are designed to address the interconnected nature of the Sustainable Development Goals, creating synergistic impacts across all 12 focus areas.</p>
-                        <p>By aligning our work with the global agenda, we ensure that our local efforts contribute to worldwide progress, creating a better future for all Kenyans while being part of the global movement for sustainable development.</p>
-                        
+                        <p>At IAD, we recognize that sustainable development requires an integrated approach. Our
+                            programs are designed to address the interconnected nature of the Sustainable Development
+                            Goals, creating synergistic impacts across all 12 focus areas.</p>
+                        <p>By aligning our work with the global agenda, we ensure that our local efforts contribute to
+                            worldwide progress, creating a better future for all Kenyans while being part of the global
+                            movement for sustainable development.</p>
+
                         <div class="sdg-pills">
                             <div class="sdg-pill">No Poverty</div>
-                            <div class="sdg-pill">Zero Hunger</div> 
+                            <div class="sdg-pill">Zero Hunger</div>
                             <div class="sdg-pill">Good Health</div>
                             <div class="sdg-pill">Quality Education</div>
                             <div class="sdg-pill">Gender Equality</div>
@@ -1168,20 +1252,20 @@
     <script src="./js/custom.js"></script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const fadeElements = document.querySelectorAll('.fade-in');
-            
+
             function checkFade() {
                 fadeElements.forEach(element => {
                     const elementTop = element.getBoundingClientRect().top;
                     const elementVisible = 150;
-                    
+
                     if (elementTop < window.innerHeight - elementVisible) {
                         element.classList.add('visible');
                     }
                 });
             }
-            
+
             checkFade();
             window.addEventListener('scroll', checkFade);
         });
