@@ -35,6 +35,13 @@
 body {
     background-color: var(--white-color);
     font-family: var(--body-font-family);
+    padding-top: 88px;
+}
+
+@media screen and (max-width: 991px) {
+    body {
+        padding-top: 60px;
+    }
 }
 
 /*---------------------------------------
